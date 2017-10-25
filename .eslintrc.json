@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "airbnb-base",
+    "prettier"
+  ],
+  "env": {
+    "browser": true,
+    "mocha": true
+  },
+  "plugins": [
+    "mocha"
+  ]
+}
