@@ -27,11 +27,18 @@ npm install xphone --save
 
 ## Usage
 
-```js
-import XPhone from 'xphone'
+###Initialization
 
+ES6 
+```js
+import XPhone from 'xphone';
+```
+
+### Make calls
+
+```js
 /* Initialization */
-let phone = new XPhone(); 
+const phone = new XPhone(); 
 
 /* Call to echo-test */
 phone.onOpen = () => {
@@ -95,7 +102,7 @@ npm test
   
 ## Support
 
-Tested in Chrome 54-55, Firefox 49-50
+Tested in Chrome 54-61, Firefox 49-56
 
 
 ## Release History
