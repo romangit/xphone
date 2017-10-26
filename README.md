@@ -104,7 +104,6 @@ npm test
 
 Tested in Chrome 54-61, Firefox 49-56
 
+## 
 
-## Release History
-
-* 1.0.0 Initial release
+[liraX Cloud PBX](http://www.lirax.ua)
