@@ -3,11 +3,21 @@
 > The JS library for develop WebSocket/WebRTC phone apps based on lirax.ua (Phone Cloud System)
 
 
+## Download
+
+[Full build](https://cdn.jsdelivr.net/npm/xphone@latest/dist/xphone.js)
+
+
 ## Installation
 
 In a browser:
 ```html
 <script src="dist/xphone.js"></script>
+```
+
+CDN:
+```html
+<script src="https://cdn.jsdelivr.net/npm/xphone@latest/dist/xphone.js"></script>
 ```
 
 Using npm:
