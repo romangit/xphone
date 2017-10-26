@@ -2,6 +2,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
+const libraryName = 'XPhone';
+
 module.exports = {
   entry: './src/Stack.js',
   plugins: [
@@ -26,6 +28,9 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: 'xphone.js',
+    filename: `${libraryName.toLowerCase()}.js`,
+    library: libraryName,
+    libraryTarget: 'umd',
+    umdNamedDefine: true,
   },
 };
