@@ -155,10 +155,20 @@ describe('Stack', () => {
     xphone.close();
   });
 
-  it('was reconnect', done => {
+  it('expected close -> reconnect', done => {
     setTimeout(() => {
       if (xphone.isOpen()) done();
-    }, xphone.registerTimeout + 2000);
+    }, xphone.registerTimeout + 4000);
+  }).timeout(10000);
+
+  it('unexpected close -> reconnect', done => {
+    xphone.onClose = () => {};
+    setTimeout(() => {
+      xphone.onClose = () => {
+        done();
+      };
+    }, xphone.registerTimeout - 1000);
+    xphone.close(!xphone.EXPECTED_CLOSE);
   }).timeout(10000);
 
   it('ping', done => {
