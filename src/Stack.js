@@ -88,7 +88,10 @@ export default class Stack {
     }
   }
 
-  close(isExpectedClose = false) {
+  close(isExpectedClose = true) {
+    if (isExpectedClose) {
+      this.registerTimeout = 1;
+    }
     this.isExpectedClose = isExpectedClose;
     if (this.socket) {
       this.socket.close();
@@ -225,7 +228,7 @@ export default class Stack {
     this.timer = setInterval(() => {
       this.lastMessageDuration += 1;
       if (this.lastMessageDuration >= 25) {
-        this.close();
+        this.close(!this.EXPECTED_CLOSE);
       }
     }, 1000);
   }
@@ -307,7 +310,8 @@ export default class Stack {
         this.calls.findByLine(msgValues.line).set('file', msgValues.url);
         break;
       case 'reconnect':
-        this.close(this.EXPECTED_CLOSE);
+        this.wsURL = msgValues.url;
+        this.close();
         break;
       default:
         break;
