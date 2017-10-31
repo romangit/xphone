@@ -1,6 +1,6 @@
 {
   "name": "xphone",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "The WebSocket/WebRTC library by lirax.ua (PBX Cloud Platform)",
   "main": "./dist/xphone.js",
   "scripts": {
