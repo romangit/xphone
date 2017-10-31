@@ -88,9 +88,9 @@ export default class Stack {
     }
   }
 
-  close(isExpectedClose = true) {
+  close(isExpectedClose = true, registerTimeout = 1000) {
     if (isExpectedClose) {
-      this.registerTimeout = 1;
+      this.registerTimeout = registerTimeout;
     }
     this.isExpectedClose = isExpectedClose;
     if (this.socket) {
@@ -317,6 +317,7 @@ export default class Stack {
         break;
     }
   }
+
   createMessage(msgType, msgValues) {
     const event = {
       data: JSON.stringify({

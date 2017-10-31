@@ -152,7 +152,7 @@ describe('Stack', () => {
     xphone.onClose = () => {
       done();
     };
-    xphone.close();
+    xphone.close(xphone.EXPECTED_CLOSE, 500);
   });
 
   it('expected close -> reconnect', done => {
