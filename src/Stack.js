@@ -68,8 +68,7 @@ export default class Stack {
 
     this.media.gotRemoteStream = event => {
       if (this.player) {
-        // noinspection JSUnresolvedVariable,JSUnresolvedFunction
-        this.player.src = URL.createObjectURL(event.stream);
+        this.player.srcObject = event.stream;
       }
     };
 
