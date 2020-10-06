@@ -38,6 +38,8 @@ export default class Stack {
 
     this.credentials = initParams;
 
+    if (this.socket) this.socket.close();
+
     this.socket = new WebSocket(this.wsURL);
 
     this.socket.onopen = () => {
